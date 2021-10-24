@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
 import anime from 'animejs';
 import styled from 'styled-components';
-import { IconLoader } from '@components/icons';
 
 const StyledLoader = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -14,25 +13,33 @@ const StyledLoader = styled.div`
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--dark-navy);
-  z-index: 99;
+  color: #000;
+  background-color: var(--linen);
 
-  .logo-wrapper {
-    width: max-content;
-    max-width: 100px;
-    transition: var(--transition);
-    opacity: ${props => (props.isMounted ? 1 : 0)};
-    svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-      margin: 0 auto;
-      fill: none;
-      user-select: none;
-      #B {
-        opacity: 0;
-      }
+  .loader-logo {
+    position: relative;
+    font-family: var(--font-mono);
+    font-size: var(--fz-heading);
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    opacity: 0;
+
+    &::after {
+      position: absolute;
+      content: '<azrie-bakri';
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 0;
     }
+  }
+
+  /* Animation */
+
+  .animation-stretch-right {
+    background-color: var(--linen);
   }
 `;
 
@@ -46,28 +53,35 @@ const Loader = ({ finishLoading }) => {
 
     loader
       .add({
-        targets: '#logo path',
-        delay: 300,
-        duration: 1500,
-        easing: 'easeInOutQuart',
-        strokeDashoffset: [anime.setDashoffset, 0],
-      })
-      .add({
-        targets: '#logo #B',
-        duration: 700,
+        targets: '.loader-logo',
+        duration: 1200,
         easing: 'easeInOutQuart',
         opacity: 1,
       })
       .add({
-        targets: '#logo',
+        targets: '.loader-logo .animation-stretch-right',
         delay: 500,
-        duration: 300,
+        duration: 1000,
+        easing: 'easeInOutSine',
+        marginLeft: '197px',
+      })
+      .add({
+        targets: '.loader-logo .animation-stretch-right',
+        delay: 700,
+        duration: 1400,
+        easing: 'easeInOutSine',
+        marginLeft: '0px',
+      })
+      .add({
+        targets: '.loader-logo',
+        delay: 1000,
+        duration: 700,
         easing: 'easeInOutQuart',
         opacity: 0,
         scale: 0.1,
       })
       .add({
-        targets: '.loader',
+        targets: '.loader-logo',
         duration: 200,
         easing: 'easeInOutQuart',
         opacity: 0,
@@ -84,9 +98,9 @@ const Loader = ({ finishLoading }) => {
   return (
     <StyledLoader className="loader" isMounted={isMounted}>
       <Helmet bodyAttributes={{ class: `hidden` }} />
-
-      <div className="logo-wrapper">
-        <IconLoader />
+      <div className="loader-logo animation-stretch">
+        <span className="animation-stretch-left">&lt;a</span>
+        <span className="animation-stretch-right">&#47;&gt;</span>
       </div>
     </StyledLoader>
   );

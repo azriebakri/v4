@@ -8,10 +8,10 @@ import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledJobsSection = styled.section`
-  max-width: 700px;
-
   .inner {
     display: flex;
+    margin: auto;
+    max-width: 700px;
 
     @media (max-width: 600px) {
       display: block;
@@ -67,15 +67,18 @@ const StyledTabList = styled.div`
 `;
 
 const StyledTabButton = styled.button`
-  ${({ theme }) => theme.mixins.link};
+  ${({ theme }) => theme.mixins.bigButton};
   display: flex;
+  margin: 5px 0 0 0;
   align-items: center;
   width: 100%;
   height: var(--tab-height);
+  font-weight: bold;
   padding: 0 20px 2px;
-  border-left: 2px solid var(--lightest-navy);
+  border: 2px solid ${({ isActive }) => (isActive ? 'var(--black)' : 'var(--grey)')};
+
   background-color: transparent;
-  color: ${({ isActive }) => (isActive ? 'var(--green)' : 'var(--slate)')};
+  color: ${({ isActive }) => (isActive ? 'var(--black)' : 'var(--grey)')};
   font-family: var(--font-mono);
   font-size: var(--fz-xs);
   text-align: left;
@@ -86,43 +89,17 @@ const StyledTabButton = styled.button`
   }
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
-    min-width: 120px;
+    flex-wrap: wrap;
+    min-width: 125px;
     padding: 0 15px;
     border-left: 0;
-    border-bottom: 2px solid var(--lightest-navy);
+    border-right: 0;
     text-align: center;
   }
 
   &:hover,
   &:focus {
-    background-color: var(--light-navy);
-  }
-`;
-
-const StyledHighlight = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  width: 2px;
-  height: var(--tab-height);
-  border-radius: var(--border-radius);
-  background: var(--green);
-  transform: translateY(calc(${({ activeTabId }) => activeTabId} * var(--tab-height)));
-  transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  transition-delay: 0.1s;
-
-  @media (max-width: 600px) {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    max-width: var(--tab-width);
-    height: 2px;
-    margin-left: 50px;
-    transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
-  }
-  @media (max-width: 480px) {
-    margin-left: 25px;
+    color: var(--black);
   }
 `;
 
@@ -152,7 +129,7 @@ const StyledTabPanel = styled.div`
     line-height: 1.3;
 
     .company {
-      color: var(--green);
+      color: var(--orange);
     }
   }
 
@@ -244,8 +221,7 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
-
+      <h2 className="tag-heading">&lt;Where I’ve Worked/&gt;</h2>
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
@@ -266,7 +242,6 @@ const Jobs = () => {
                 </StyledTabButton>
               );
             })}
-          <StyledHighlight activeTabId={activeTabId} />
         </StyledTabList>
 
         <StyledTabPanels>

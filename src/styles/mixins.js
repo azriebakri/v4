@@ -25,6 +25,12 @@ const button = css`
 `;
 
 const mixins = {
+  flexEnd: css`
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  `,
+
   flexCenter: css`
     display: flex;
     justify-content: center;
@@ -47,28 +53,29 @@ const mixins = {
     &:hover,
     &:active,
     &:focus {
-      color: var(--green);
+      color: var(--grey);
       outline: 0;
     }
   `,
 
   inlineLink: css`
     display: inline-block;
-    text-decoration: none;
     text-decoration-skip-ink: auto;
+    white-space: pre-wrap;
     position: relative;
+    font-weight: bold;
     transition: var(--transition);
-    color: var(--green);
+    color: var(--orange);
     &:hover,
     &:focus,
     &:active {
-      color: var(--green);
+      color: var(--orange);
       outline: 0;
       &:after {
         width: 100%;
       }
       & > * {
-        color: var(--green) !important;
+        color: var(--orange) !important;
         transition: var(--transition);
       }
     }
@@ -76,10 +83,10 @@ const mixins = {
       content: '';
       display: block;
       width: 0;
-      height: 1px;
+      height: 2px;
       position: relative;
-      bottom: 0.37em;
-      background-color: var(--green);
+      bottom: 0.2em;
+      background-color: var(--orange);
       transition: var(--transition);
       opacity: 0.5;
     }
@@ -88,10 +95,9 @@ const mixins = {
   button,
 
   smallButton: css`
-    color: var(--green);
+    color: var(--black);
     background-color: transparent;
-    border: 1px solid var(--green);
-    border-radius: var(--border-radius);
+    border: 1px solid var(--black);
     padding: 0.75rem 1rem;
     font-size: var(--fz-xs);
     font-family: var(--font-mono);
@@ -102,7 +108,7 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--green-tint);
+      background-color: var(--grey-tint);
       outline: none;
     }
     &:after {
@@ -111,10 +117,9 @@ const mixins = {
   `,
 
   bigButton: css`
-    color: var(--green);
+    color: var(--black);
     background-color: transparent;
-    border: 1px solid var(--green);
-    border-radius: var(--border-radius);
+    border: 1px solid var(--black);
     padding: 1.25rem 1.75rem;
     font-size: var(--fz-sm);
     font-family: var(--font-mono);
@@ -125,7 +130,7 @@ const mixins = {
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--green-tint);
+      background-color: var(--grey-tint);
       outline: none;
     }
     &:after {
@@ -156,7 +161,7 @@ const mixins = {
         content: '▹';
         position: absolute;
         left: 0;
-        color: var(--green);
+        color: var(--black);
       }
     }
   `,

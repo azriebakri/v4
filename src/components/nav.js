@@ -10,14 +10,15 @@ import { Menu } from '@components';
 import { IconLogo } from '@components/icons';
 
 const StyledHeader = styled.header`
-  ${({ theme }) => theme.mixins.flexBetween};
+  ${({ theme }) => theme.mixins.flexCenter};
   position: fixed;
   top: 0;
   z-index: 11;
   padding: 0px 50px;
   width: 100%;
   height: var(--nav-height);
-  background-color: rgba(10, 25, 47, 0.85);
+  background: var(--linen);
+  // background: rgba(244, 204, 84, 0.1);
   filter: none !important;
   pointer-events: auto !important;
   user-select: auto !important;
@@ -38,8 +39,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
-        background-color: rgba(10, 25, 47, 0.85);
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        box-shadow: 0 10px 30px -10px var(--black);
       `};
 
     ${props =>
@@ -48,48 +48,27 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        box-shadow: 0 10px 30px -10px var(--black);
       `};
   }
 `;
 
 const StyledNav = styled.nav`
   ${({ theme }) => theme.mixins.flexBetween};
+  @media (max-width: 768px) {
+    ${({ theme }) => theme.mixins.flexEnd};
+  }
   position: relative;
   width: 100%;
   color: var(--lightest-slate);
   font-family: var(--font-mono);
   counter-reset: item 0;
   z-index: 12;
-
-  .logo {
-    ${({ theme }) => theme.mixins.flexCenter};
-
-    a {
-      color: var(--green);
-      width: 42px;
-      height: 42px;
-
-      &:hover,
-      &:focus {
-        svg {
-          fill: var(--green-tint);
-        }
-      }
-
-      svg {
-        fill: none;
-        transition: var(--transition);
-        user-select: none;
-      }
-    }
-  }
 `;
 
 const StyledLinks = styled.div`
-  display: flex;
-  align-items: center;
-
+  ${({ theme }) => theme.mixins.flexBetween};
+  width: 100%;
   @media (max-width: 768px) {
     display: none;
   }
@@ -108,13 +87,12 @@ const StyledLinks = styled.div`
 
       a {
         padding: 10px;
+        color: var(--black);
+        font-weight: bold;
 
-        &:before {
-          content: '0' counter(item) '.';
-          margin-right: 5px;
-          color: var(--green);
-          font-size: var(--fz-xxs);
-          text-align: right;
+        &:hover,
+        &:focus {
+          color: var(--grey);
         }
       }
     }
@@ -201,14 +179,6 @@ const Nav = ({ isHome }) => {
           </>
         ) : (
           <>
-            <TransitionGroup component={null}>
-              {isMounted && (
-                <CSSTransition classNames={fadeClass} timeout={timeout}>
-                  <>{Logo}</>
-                </CSSTransition>
-              )}
-            </TransitionGroup>
-
             <StyledLinks>
               <ol>
                 <TransitionGroup component={null}>
