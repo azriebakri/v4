@@ -9,12 +9,15 @@ const StyledAboutSection = styled.section`
   max-width: 900px;
 
   .inner {
+    // flex-direction: column;
+    // flex-wrap: wrap;
     display: grid;
     grid-template-columns: 3fr 2fr;
     grid-gap: 50px;
 
     @media (max-width: 768px) {
-      display: block;
+      ${({ theme }) => theme.mixins.flexCenter};
+      flex-direction: column;
     }
   }
 `;
@@ -45,7 +48,12 @@ const StyledText = styled.div`
       }
     }
   }
+
+  @media (max-width: 768px) {
+    order: 2;
+  }
 `;
+
 const StyledPic = styled.div`
   position: relative;
   max-width: 300px;
@@ -86,6 +94,10 @@ const StyledPic = styled.div`
       filter: grayscale(100%) contrast(1);
       transition: var(--transition);
     }
+  }
+
+  @media (max-width: 768px) {
+    order: 1;
   }
 `;
 

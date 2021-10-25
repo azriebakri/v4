@@ -90,7 +90,7 @@ const StyledTabButton = styled.button`
   @media (max-width: 600px) {
     ${({ theme }) => theme.mixins.flexCenter};
     flex-wrap: wrap;
-    min-width: 125px;
+    min-width: 120px;
     padding: 0 15px;
     border-left: 0;
     border-right: 0;
