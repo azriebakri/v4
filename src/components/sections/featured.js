@@ -24,7 +24,8 @@ const StyledProject = styled.li`
   align-items: center;
 
   @media (max-width: 768px) {
-    ${({ theme }) => theme.mixins.boxShadow};
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
   }
 
   &:not(:last-of-type) {
@@ -108,6 +109,7 @@ const StyledProject = styled.li`
       grid-column: 1 / -1;
       padding: 40px 40px 30px;
       z-index: 5;
+      background-color: var(--light-orange);
     }
 
     @media (max-width: 480px) {
@@ -117,14 +119,18 @@ const StyledProject = styled.li`
 
   .project-overline {
     margin: 10px 0;
-    color: var(--green);
+    color: var(--orange);
     font-family: var(--font-mono);
     font-size: var(--fz-xs);
-    font-weight: 400;
+    font-weight: 600;
+
+    @media (min-width: 768px) {
+      color: var(--orange);
+    }
   }
 
   .project-title {
-    color: var(--lightest-slate);
+    color: var(--black);
     font-size: clamp(24px, 5vw, 28px);
 
     @media (min-width: 768px) {
@@ -132,7 +138,7 @@ const StyledProject = styled.li`
     }
 
     @media (max-width: 768px) {
-      color: var(--white);
+      color: var(--black);
 
       a {
         position: static;
@@ -152,13 +158,15 @@ const StyledProject = styled.li`
   }
 
   .project-description {
-    ${({ theme }) => theme.mixins.boxShadow};
+    box-shadow: 0 10px 30px -15px var(--navy-shadow);
+    transition: var(--transition);
+
     position: relative;
     z-index: 2;
     padding: 25px;
     border-radius: var(--border-radius);
-    background-color: var(--light-navy);
-    color: var(--light-slate);
+    background-color: var(--linen);
+    color: var(--black);
     font-size: var(--fz-lg);
 
     @media (max-width: 768px) {
@@ -192,7 +200,7 @@ const StyledProject = styled.li`
 
     li {
       margin: 0 20px 5px 0;
-      color: var(--light-slate);
+      color: var(--black);
       font-family: var(--font-mono);
       font-size: var(--fz-xs);
       white-space: nowrap;
@@ -203,7 +211,7 @@ const StyledProject = styled.li`
 
       li {
         margin: 0 10px 5px 0;
-        color: var(--lightest-slate);
+        color: var(--white);
       }
     }
   }
@@ -256,7 +264,7 @@ const StyledProject = styled.li`
     a {
       width: 100%;
       height: 100%;
-      background-color: var(--green);
+      background-color: var(--linen);
       border-radius: var(--border-radius);
       vertical-align: middle;
 
@@ -283,7 +291,7 @@ const StyledProject = styled.li`
         bottom: 0;
         z-index: 3;
         transition: var(--transition);
-        background-color: var(--navy);
+        background-color: transparent;
         mix-blend-mode: screen;
       }
     }
@@ -322,7 +330,6 @@ const Featured = () => {
               tech
               github
               external
-              cta
             }
             html
           }
@@ -348,7 +355,7 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="tag-heading" ref={revealTitle}>
-        Some Things I’ve Built
+        &lt;Things I Helped Build/&gt;
       </h2>
 
       <StyledProjectsGrid>
@@ -365,7 +372,7 @@ const Featured = () => {
                     <p className="project-overline">Featured Project</p>
 
                     <h3 className="project-title">
-                      <a href={external}>{title}</a>
+                      <div>{title}</div>
                     </h3>
 
                     <div

@@ -42,7 +42,7 @@ const StyledText = styled.div`
         content: '▹';
         position: absolute;
         left: 0;
-        color: var(--green);
+        color: var(--black);
         font-size: var(--fz-sm);
         line-height: 12px;
       }
@@ -113,7 +113,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'MongoDb', 'React', 'Node.js', 'AWS'];
+  const skills = ['JavaScript (ES6+)', 'MongoDb', 'React', 'Node.js', 'AWS', 'DevOps'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -131,7 +131,7 @@ const About = () => {
             <p>
               Fast-forward to today,I’ve had the privilege of working at{' '}
               <a href="https://www.avanade.com/ms-my">a huge consultancy agency</a>, and{' '}
-              <a href="https://www.servicerocket.com/">a products company</a> that work closely with{' '}
+              <a href="https://www.servicerocket.com/">a product company</a> that work closely with{' '}
               <a href="https://www.atlassian.com/">Atlassian</a>.
             </p>
             <p>

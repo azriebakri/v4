@@ -42,7 +42,6 @@ const StyledTabList = styled.div`
   }
   @media (max-width: 480px) {
     width: calc(100% + 50px);
-    padding-left: 25px;
     margin-left: -25px;
   }
 
@@ -85,6 +84,7 @@ const StyledTabButton = styled.button`
   white-space: nowrap;
 
   @media (max-width: 768px) {
+    white-space: pre-wrap;
     padding: 0 15px 2px;
   }
   @media (max-width: 600px) {
