@@ -3,7 +3,7 @@ date: '2021-05-01'
 title: 'Fullstack Developer'
 company: 'Food Market Hub'
 location: 'Selangor, MY'
-range: 'May 2021 - Present'
+range: 'May 2021 - Feb 2022'
 url: 'https://foodmarkethub.com/'
 ---
 

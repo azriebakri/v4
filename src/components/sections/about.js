@@ -113,7 +113,16 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'MongoDb', 'React', 'Node.js', 'AWS', 'DevOps'];
+  const skills = [
+    'JavaScript (ES6+)',
+    'Typescript',
+    'React',
+    'AngularJS',
+    'Node.js',
+    'AWS',
+    'Docker',
+    'GraphQL',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
@@ -132,13 +141,13 @@ const About = () => {
               Fast-forward to today,I’ve had the privilege of working at{' '}
               <a href="https://www.avanade.com/ms-my">a huge consultancy agency</a>, and{' '}
               <a href="https://www.servicerocket.com/">a product company</a> that work closely with{' '}
-              <a href="https://www.atlassian.com/">Atlassian</a>.
+              <b>Atlassian</b> and experience working in a{' '}
+              <a href="https://www.servicerocket.com/">startup</a> environment
             </p>
             <p>
-              My main focus these days is developing and building products that modernize the
-              traditional flows of F&amp;B processes at{' '}
-              <a href="https://foodmarkethub.com/">Food Market Hub</a> for a both restaurant owners
-              and suppliers.
+              My main focus these days is the development, implementation, maintenance, and support
+              of products that contribute directly/indirectly towards unification between
+              Jobstreets.com and JobsDB.com at <a href="https://www.seekasia.com/">Seek Asia</a>
             </p>
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
