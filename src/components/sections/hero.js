@@ -63,12 +63,7 @@ const Hero = () => {
     <>
       <p>
         I’m a full-stack develepor who specializes in building beautiful UI (and occasionally write
-        APIs and queries) for exceptional digital experiences. At the moment, I’m focused on
-        building products that modernize traditional F&amp;B processes at{' '}
-        <a href="https://foodmarkethub.com/" target="_blank" rel="noreferrer">
-          Food Market Hub
-        </a>
-        .
+        APIs and queries) for exceptional digital experiences.
       </p>
     </>
   );
