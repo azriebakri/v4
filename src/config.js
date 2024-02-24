@@ -7,10 +7,6 @@ module.exports = {
       url: 'https://github.com/azriebakri',
     },
     {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/azriebakri__/',
-    },
-    {
       name: 'Linkedin',
       url: 'https://www.linkedin.com/in/azriebakri',
     },

@@ -117,11 +117,10 @@ const About = () => {
     'JavaScript (ES6+)',
     'Typescript',
     'React',
-    'AngularJS',
+    'GraphQL',
     'Node.js',
     'AWS',
     'Docker',
-    'GraphQL',
   ];
 
   return (
@@ -133,8 +132,8 @@ const About = () => {
           <div>
             <p>
               Hello there! My name is Azrie and I enjoy creating web related things and learning new
-              skills. My interest in web development started back in 2018 during my early days of my
-              career.
+              skills. My interest in web development started back in 2018 during the early days of
+              my career.
             </p>
 
             <p>
@@ -142,12 +141,11 @@ const About = () => {
               <a href="https://www.avanade.com/ms-my">a huge consultancy agency</a>, and{' '}
               <a href="https://www.servicerocket.com/">a product company</a> that work closely with{' '}
               <b>Atlassian</b> and experience working in a{' '}
-              <a href="https://www.servicerocket.com/">startup</a> environment
+              <a href="https://www.foodmarkethub.com//">startup</a> environment
             </p>
             <p>
               My main focus these days is the development, implementation, maintenance, and support
-              of products that contribute directly/indirectly towards unification between
-              Jobstreets.com and JobsDB.com at <a href="https://www.seekasia.com/">Seek Asia</a>
+              of products at <a href="https://www.seekasia.com/">Seek</a>
             </p>
             <p>Here are a few technologies I’ve been working with recently:</p>
           </div>
