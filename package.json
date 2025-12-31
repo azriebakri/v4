@@ -1,5 +1,13 @@
 {
   "name": "v4",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "@parcel/watcher",
+      "lmdb",
+      "msgpackr-extract"
+    ]
+  },
   "description": "Personal Website V4",
   "version": "1.0.0",
   "author": "Azrie Bakri <mohamad.azriebakri@gmail.com>",
