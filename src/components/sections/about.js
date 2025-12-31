@@ -115,7 +115,7 @@ const About = () => {
 
   const skills = [
     'JavaScript (ES6+)',
-    'Typescript',
+    'TypeScript',
     'React',
     'GraphQL',
     'Node.js',
@@ -131,23 +131,26 @@ const About = () => {
         <StyledText>
           <div>
             <p>
-              Hello there! My name is Azrie and I enjoy creating web related things and learning new
-              skills. My interest in web development started back in 2018 during the early days of
-              my career.
+              Hi, I'm Azrie! I'm passionate about building exceptional web experiences and
+              constantly expanding my craft. My journey in web development began in 2018, and since
+              then, I've grown from those early career days into a developer who thrives on solving
+              complex problems.
             </p>
 
             <p>
-              Fast-forward to today,I’ve had the privilege of working at{' '}
-              <a href="https://www.avanade.com/ms-my">a huge consultancy agency</a>, and{' '}
-              <a href="https://www.servicerocket.com/">a product company</a> that work closely with{' '}
-              <b>Atlassian</b> and experience working in a{' '}
-              <a href="https://www.foodmarkethub.com//">startup</a> environment
+              Throughout my career, I've had the opportunity to work across diverse
+              environments—from a large-scale consultancy agency, to a product company partnering
+              with Atlassian, and even navigating the fast-paced world of a startup. Each experience
+              has shaped how I approach development and collaborate with teams.
             </p>
+
             <p>
-              My main focus these days is the development, implementation, maintenance, and support
-              of products at <a href="https://www.seekasia.com/">Seek</a>
+              Currently, I'm focused on developing, implementing, and maintaining products at{' '}
+              <a href="https://www.seekasia.com/">Seek</a>, where I contribute to building platforms
+              that connect millions of job seekers with opportunities across Asia-Pacific.
             </p>
-            <p>Here are a few technologies I’ve been working with recently:</p>
+
+            <p>Here are a few technologies I've been working with recently:</p>
           </div>
 
           <ul className="skills-list">

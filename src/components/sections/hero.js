@@ -58,12 +58,13 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Azrie Bakri.</h2>;
-  const three = <h3 className="big-heading">I build stuffs for the web.</h3>;
+  const three = <h3 className="big-heading">I build stuff for the web.</h3>;
   const four = (
     <>
       <p>
-        I’m a full-stack develepor who specializes in building beautiful UI (and occasionally write
-        APIs and queries) for exceptional digital experiences.
+        Full-stack developer who enjoy crafting intuitive, visually compelling user interfaces with
+        a strong foundation in backend development. I build end-to-end solutions that combine
+        elegant design with robust API architecture
       </p>
     </>
   );

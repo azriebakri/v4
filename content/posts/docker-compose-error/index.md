@@ -11,7 +11,7 @@ tags:
 
 ## Problem
 
-Recently while updating with [Skela](https://github.com/Upstatement/skela-wp-theme) with webpack, I encountered a weird error where I wasn't able to run a simple script:
+Recently while updating [Skela](https://github.com/Upstatement/skela-wp-theme) with webpack, I encountered a weird error where I wasn't able to run a simple script:
 
 ```shell:title=bin/composer
 #!/bin/bash
@@ -28,7 +28,7 @@ The error was coming from the `-w` flag in the `docker-compose exec` command in 
 
 ## Solution
 
-Turns The fix was to update the version in my `docker-compose.yml` file to from version `3.5` to `3.6`. It's strange because 3.5 isn't anywhere close to the API version `1.35` from the error message 🤷‍♀️
+Turns out, the fix was to update the version in my `docker-compose.yml` file from version `3.5` to `3.6`. It's strange because 3.5 isn't anywhere close to the API version `1.35` from the error message 🤷‍♀️
 
 ```yaml:title=docker-compose.yml
 version: '3.6' # highlight-line

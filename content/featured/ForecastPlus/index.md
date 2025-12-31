@@ -4,13 +4,13 @@ title: 'Forecast Plus'
 cover: './Forecast_Plus.png'
 tech:
   - React
-  - NodeJS
+  - Node.js
   - MongoDB
   - HTML
   - CSS
   - Docker
 ---
 
-A digital AI-based analytical application that that provides users such as restaurant owners and outlet managers insights and predictions based on historical procurement usage and historical sales data.
+A digital AI-based analytical application that provides users such as restaurant owners and outlet managers insights and predictions based on historical procurement usage and historical sales data.
 
-Responsibilities include managing and maintaining both the front-end and back-end sides of things.
+Responsibilities included managing and maintaining both the front-end and back-end sides of things.
